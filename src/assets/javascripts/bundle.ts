@@ -45,6 +45,7 @@ import {
   getActiveElement,
   getOptionalElement,
   requestJSON,
+  setLocation,
   setToggle,
   watchDocument,
   watchKeyboard,
@@ -182,6 +183,29 @@ keyboard$
   )
     .subscribe(key => {
       switch (key.type) {
+
+        // Go to previous page
+        case ",":
+        case "p":
+          const prev = document.querySelector("link[rel=prev]")
+          if (prev instanceof HTMLLinkElement)
+            window.location.href = prev.href
+          break
+
+        // Go to next page
+        case ".":
+        case "n":
+          const next = document.querySelector("link[rel=next]")
+          if (next instanceof HTMLLinkElement)
+            window.location.href = next.href
+          break
+
+        // Open search
+        case "/":
+          const el = document.querySelector("[data-md-component=search] button")
+          if (el instanceof HTMLButtonElement)
+            el.click()
+          break
 
         // Expand navigation, see https://bit.ly/3ZjG5io
         case "Enter":
