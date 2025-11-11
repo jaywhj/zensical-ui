@@ -376,6 +376,12 @@
           height: 100%;
           object-fit: contain;
           fill: currentcolor;
+
+          // Override for Lucide icons, which use strokes
+          &.lucide {
+            fill: transparent;
+            stroke: currentcolor;
+          }
         }
       }
     }
