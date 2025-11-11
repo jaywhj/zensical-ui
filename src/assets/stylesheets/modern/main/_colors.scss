@@ -136,13 +136,6 @@
   --md-warning-fg-color:              hsla(0, 0%, 0%, 0.87);
   --md-warning-bg-color:              hsla(60, 100%, 80%, 1);
 
-  // Footer color shades
-  --md-footer-fg-color:                var(--md-default-fg-color);
-  --md-footer-fg-color--light:         var(--md-default-fg-color--light);
-  --md-footer-fg-color--lighter:       var(--md-default-fg-color--lighter);
-  --md-footer-bg-color:                var(--md-default-bg-color);
-  --md-footer-bg-color--dark:          hsla(0, 0%, 0%, 0.32);
-
   // Shadow depth 1
   --md-shadow-z1:
     0 #{px2rem(4px)} #{px2rem(10px)} hsla(0, 0%, 0%, 0.05),
