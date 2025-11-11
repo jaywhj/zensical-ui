@@ -280,17 +280,19 @@
     align-self: center;
     width: px2rem(18px);
     height: px2rem(18px);
-    margin-top: px2rem(2px);
+    margin-top: px2rem(8px);
     color: var(--md-default-fg-color--light);
+    background-color: var(--md-default-bg-color--light);
+    backdrop-filter: blur(px2rem(8px));
+    box-shadow: var(--md-shadow-z2);
     pointer-events: initial;
     cursor: pointer;
     border-radius: 100%;
-    transition: background-color 250ms;
+    transition: transform 125ms;
 
     // Tabbed button on hover
     &:hover {
-      color: var(--md-accent-fg-color);
-      background-color: var(--md-accent-fg-color--transparent);
+      transform: scale(1.125);
     }
 
     // Tabbed button icon
@@ -318,12 +320,6 @@
     width: px2rem(24px);
     height: px2rem(38px);
     pointer-events: none;
-    background:
-      linear-gradient(
-        to right,
-        var(--md-default-bg-color) 60%,
-        transparent
-      );
     transition: opacity 125ms;
 
     // Adjust for right-to-left languages
@@ -340,12 +336,6 @@
     &--next {
       right: 0;
       justify-content: end;
-      background:
-        linear-gradient(
-          to left,
-          var(--md-default-bg-color) 60%,
-          transparent
-        );
 
       // Tabbed button icon content
       .tabbed-button::after {
