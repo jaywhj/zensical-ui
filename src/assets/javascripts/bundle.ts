@@ -180,7 +180,7 @@ merge(location$, target$)
 // Set up global keyboard handlers
 keyboard$
   .pipe(
-    filter(({ mode }) => mode === "global")
+    filter(({ mode, meta }) => mode === "global" && !meta)
   )
     .subscribe(key => {
       switch (key.type) {
