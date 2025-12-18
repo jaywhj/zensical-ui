@@ -35,6 +35,9 @@ on:
       ref:
         required: true
         type: string
+      attestations:
+        required: true
+        type: boolean
 
 permissions:
   attestations: write # Required for attestations
@@ -82,6 +85,7 @@ jobs:
           fi
 
       - name: Create artifact attestation
+        if: inputs.attestations == true
         uses: actions/attest-build-provenance@v1
         with:
           show-summary: false
